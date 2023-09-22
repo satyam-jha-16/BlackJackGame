@@ -42,11 +42,14 @@ function renderGame(){
         message = "You are out of Game";
         isAlive = false;
     }
-    playEl = message;
+    playEl.textContent = message;
 }
 function newCard(){
     if(isAlive === true && hasBlackJack === false){
-        
+        let newCard = getRandomCard();
+        sum += newCard;
+        cards.push(newCard);
+        renderGame();
     }
 
 }
